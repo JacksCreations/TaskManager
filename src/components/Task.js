@@ -12,7 +12,7 @@ const Task = ({ task, onDelete }) => {
     <div className="taskBox">
       <h3 className="name">
         {task.name}
-        <button className="complete" onClick={() => onDelete(task.id)}>
+        <button className="complete" onClick={() => onDelete(task)}>
           ✓
         </button>
       </h3>

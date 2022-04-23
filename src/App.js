@@ -26,7 +26,7 @@ const App = () => {
     setTasks([...tasks, task]);
   };
 
-  const deleteTask = async (task) => {
+  const deleteTask = (task) => {
     task.completed = true;
   };
 

@@ -14,7 +14,7 @@ const Tasks = ({ tasks, onDelete }) => {
 
   //shows all completed tasks
   function getCompleted() {
-    let completed = tasks.filter((task) => task.completed == false);
+    let completed = tasks.filter((task) => task.completed == true);
     return completed.map((task) => (
       <Task key={task.id} task={task} onDelete={onDelete} />
     ));
@@ -22,7 +22,7 @@ const Tasks = ({ tasks, onDelete }) => {
 
   //shows all uncompleted tasks
   function getUncompleted() {
-    let uncompleted = tasks.filter((task) => task.completed == true);
+    let uncompleted = tasks.filter((task) => task.completed == false);
     return uncompleted.map((task) => (
       <Task key={task.id} task={task} onDelete={onDelete} />
     ));
@@ -35,9 +35,24 @@ const Tasks = ({ tasks, onDelete }) => {
       </center>
 
       <div>
-        <button onClick={() => setFeed(getAll())}>All Tasks</button>
-        <button onClick={() => setFeed(getCompleted())}>Show Completed</button>
-        <button onClick={() => setFeed(getUncompleted())}>To Do</button>
+        <center>
+          <button className="feedButtons" onClick={() => setFeed(getAll())}>
+            All Tasks
+          </button>
+          <button
+            className="feedButtons"
+            o
+            onClick={() => setFeed(getUncompleted())}
+          >
+            To Do
+          </button>
+          <button
+            className="feedButtons"
+            onClick={() => setFeed(getCompleted())}
+          >
+            Show Completed
+          </button>
+        </center>
         {feed}
       </div>
     </div>

@@ -17,9 +17,9 @@ const AddTask = ({ onAdd }) => {
     onAdd({ id, name, description, completed });
 
     //console.log(id);
-    //console.log(name);
+    console.log(name);
     //console.log(description);
-
+    console.log(completed);
     setName('');
     setDescription('');
   };
