@@ -1,32 +1,33 @@
 import React from 'react';
 import { useState } from 'react';
+import { v4 as uuid } from 'uuid';
 
 const AddTask = ({ onAdd }) => {
-  const [id, setId] = useState('');
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
 
-  var countID = 0;
-  function genID() {
-    countID += 1;
-  }
-
   const onSubmit = (e) => {
-    genID();
+    e.preventDefault();
+    //assigns each task a UUID
+    var id = uuid();
+    id = id.slice(0, 5);
     onAdd({ id, name, description });
 
-    console.log(id);
-    console.log(name);
-    console.log(description);
+    //console.log(id);
+    //console.log(name);
+    //console.log(description);
 
     setName('');
     setDescription('');
   };
 
   return (
-    <form>
-      <div className="col-md-6">
-        <label form="taskTitle" className="form-label">
+    <form onSubmit={onSubmit}>
+      <center>
+        <label id="formLabel">Task Manager</label>
+      </center>
+      <div className="mb-2">
+        <label form="taskName" className="form-label">
           Task Name
         </label>
         <input
@@ -37,21 +38,21 @@ const AddTask = ({ onAdd }) => {
         />
       </div>
 
-      <div className="col-md-6">
+      <div className="mb-2">
         <label htmlFor="contentInput" className="form-label">
-          Description
+          Notes
         </label>
         <textarea
           className="form-control"
           id="contentInput"
-          rows="3"
+          rows="2"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
         ></textarea>
       </div>
 
       <div>
-        <button type="submit" id="submitTask" onSubmit={onSubmit}>
+        <button type="submit" id="submitTask">
           Add
         </button>
       </div>

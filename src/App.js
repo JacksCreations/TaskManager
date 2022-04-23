@@ -24,6 +24,10 @@ const App = () => {
     setTasks([...tasks, task]);
   };
 
+  const deleteTask = async (id) => {
+    setTasks(tasks.filter((task) => task.id !== id));
+  };
+
   return (
     <div className="container">
       <div className="row">
@@ -32,7 +36,7 @@ const App = () => {
         </div>
 
         <div className="col-md-6">
-          <Tasks tasks={tasks} />
+          <Tasks tasks={tasks} onDelete={deleteTask} />
         </div>
       </div>
     </div>

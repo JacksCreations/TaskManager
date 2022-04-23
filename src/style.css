@@ -6,6 +6,43 @@ p {
 .taskBox {
   background-color: aliceblue;
   border: 2px solid black;
+  margin: 6px;
+  padding-left: 9px;
+}
+
+#formLabel {
+  margin-bottom: 15px;
+  font-size: 30px;
+  font-family: 'Bebas Neue';
+}
+
+.form-label {
+  font-family: 'Bebas Neue';
+  font-size: 22px;
   margin: 5px;
-  padding-left: 5px;
+}
+
+.mb-2 {
+  width: 98%;
+  display: block;
+  margin: 10px;
+}
+
+.complete {
+  font-size: 15px;
+  float: right;
+  margin-right: 6px;
+  background-color: rgba(0, 239, 0, 0.65);
+  border-radius: 2px;
+  border-color: rgb(78, 173, 255, 0.5);
+  color: black;
+}
+
+.name {
+  font-family: 'Akshar', sans-serif;
+  position: relative;
+}
+
+.notes {
+  padding-bottom: 12px;
 }
