@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './style.css';
 import AddTask from './components/AddTask';
 import TaskFeed from './components/TaskFeed';
+import Task from './components/Task';
 
 const App = () => {
   //test feed
@@ -27,7 +28,7 @@ const App = () => {
         </div>
 
         <div className="col-md-6">
-          <TaskFeed></TaskFeed>
+          <TaskFeed tasks={tasks}></TaskFeed>
         </div>
       </div>
     </div>
