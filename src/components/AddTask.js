@@ -11,7 +11,10 @@ const AddTask = ({ onAdd }) => {
     //assigns each task a UUID
     var id = uuid();
     id = id.slice(0, 5);
-    onAdd({ id, name, description });
+
+    //set status
+    let completed = false;
+    onAdd({ id, name, description, completed });
 
     //console.log(id);
     //console.log(name);
@@ -52,8 +55,8 @@ const AddTask = ({ onAdd }) => {
       </div>
 
       <div>
-        <button type="submit" id="submitTask">
-          Add
+        <button type="submit" id="addTask">
+          ADD
         </button>
       </div>
     </form>

@@ -11,11 +11,13 @@ const App = () => {
       id: 1,
       name: 'Clean room',
       description: 'Jacks room',
+      completed: true,
     },
     {
       id: 2,
       name: 'Do Laundry',
       description: 'Jacks Laundry',
+      completed: false,
     },
   ]);
 
@@ -24,9 +26,15 @@ const App = () => {
     setTasks([...tasks, task]);
   };
 
-  const deleteTask = async (id) => {
-    setTasks(tasks.filter((task) => task.id !== id));
+  const deleteTask = async (task) => {
+    task.completed = true;
   };
+
+  /*
+  const showCompleted = () => {
+    setTasks(tasks.filter((task) => task.completed == completed));
+  };
+  */
 
   return (
     <div className="container">
