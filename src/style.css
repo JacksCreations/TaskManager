@@ -35,7 +35,7 @@ p {
 }
 
 .mb-2 {
-  width: 50%;
+  width: 65%;
   display: block;
   margin: 10px;
 }
@@ -82,7 +82,7 @@ p {
   background: rgb(230, 230, 230, 0.3);
 }
 
-.feedButtons{
+.feedButtons {
   margin: 10px;
   font-family: 'Akshar', sans-serif;
   background-color: rgba(0, 237, 158, 0.65);
