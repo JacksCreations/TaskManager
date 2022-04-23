@@ -2,21 +2,29 @@ import React from 'react';
 import { useState } from 'react';
 
 const AddTask = ({ onAdd }) => {
+  const [id, setId] = useState('');
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
 
-  const onSubmit = (e) => {
-    onAdd({ name, description });
+  var countID = 0;
+  function genID() {
+    countID += 1;
+  }
 
-    //console.log(name);
-    //console.log(description);
+  const onSubmit = (e) => {
+    genID();
+    onAdd({ id, name, description });
+
+    console.log(id);
+    console.log(name);
+    console.log(description);
 
     setName('');
     setDescription('');
   };
 
   return (
-    <form onSubmit={onSubmit}>
+    <form>
       <div className="col-md-6">
         <label form="taskTitle" className="form-label">
           Task Name
@@ -43,7 +51,7 @@ const AddTask = ({ onAdd }) => {
       </div>
 
       <div>
-        <button type="submit" id="submitTask">
+        <button type="submit" id="submitTask" onSubmit={onSubmit}>
           Add
         </button>
       </div>

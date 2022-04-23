@@ -2,8 +2,7 @@ import React from 'react';
 import { useState } from 'react';
 import './style.css';
 import AddTask from './components/AddTask';
-import TaskFeed from './components/TaskFeed';
-import Task from './components/Task';
+import Tasks from './components/Tasks';
 
 const App = () => {
   //test feed
@@ -20,15 +19,20 @@ const App = () => {
     },
   ]);
 
+  // Add Task
+  const addTask = async (task) => {
+    setTasks([...tasks, task]);
+  };
+
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-6">
-          <AddTask></AddTask>
+          <AddTask onAdd={addTask} />
         </div>
 
         <div className="col-md-6">
-          <TaskFeed tasks={tasks}></TaskFeed>
+          <Tasks tasks={tasks} />
         </div>
       </div>
     </div>
