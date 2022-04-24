@@ -21,6 +21,14 @@ const App = () => {
     },
   ]);
 
+  const [uncompleted, setUncompleted] = useState(
+    tasks.filter((task) => task.completed == false)
+  );
+
+  const [completed, setCompleted] = useState(
+    tasks.filter((task) => task.completed == true)
+  );
+
   // Add Task
   const addTask = async (task) => {
     setTasks([...tasks, task]);
@@ -28,13 +36,37 @@ const App = () => {
 
   const deleteTask = (task) => {
     task.completed = true;
+    setTasks([...tasks]);
   };
 
-  /*
-  const showCompleted = () => {
-    setTasks(tasks.filter((task) => task.completed == completed));
-  };
-  */
+  function updater() {
+    useEffect(() => {
+      console.log();
+    });
+  }
+
+  const [feed, setFeed] = useState(0);
+  //Shows all tasks
+
+  function getAll() {
+    setTasks(tasks);
+    setFeed(0);
+    console.log(feed);
+  }
+
+  //shows all completed tasks
+  function getCompleted() {
+    let completed = tasks.filter((task) => task.completed == true);
+    setFeed(1);
+    setCompleted(completed);
+  }
+
+  //shows all uncompleted tasks
+  function getUncompleted() {
+    let uncompleted = tasks.filter((task) => task.completed == false);
+    setFeed(2);
+    setUncompleted(uncompleted);
+  }
 
   return (
     <div className="container">
@@ -42,9 +74,25 @@ const App = () => {
         <div className="col-md-6">
           <AddTask onAdd={addTask} />
         </div>
-
+        <center>
+          <button className="feedButtons" onClick={() => getAll()}>
+            All Tasks
+          </button>
+          <button className="feedButtons" o onClick={() => getUncompleted()}>
+            To Do
+          </button>
+          <button className="feedButtons" onClick={() => getCompleted()}>
+            Completed
+          </button>
+        </center>
         <div className="col-md-6">
-          <Tasks tasks={tasks} onDelete={deleteTask} />
+          <Tasks
+            tasks={tasks}
+            uncompleted={uncompleted}
+            completed={completed}
+            onDelete={deleteTask}
+            feed={feed}
+          />
         </div>
       </div>
     </div>

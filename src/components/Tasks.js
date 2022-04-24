@@ -1,8 +1,27 @@
 import React from 'react';
 import Task from './Task';
-import { useState, useEffect } from 'react';
 
-const Tasks = ({ tasks, onDelete }) => {
+const Tasks = ({ tasks, onDelete, completed, uncompleted, feed }) => {
+  function displayFeed() {
+    if (feed == 0) {
+      {
+        return tasks.map((task) => (
+          <Task key={task.id} task={task} onDelete={onDelete} />
+        ));
+      }
+    } else if (feed == 1) {
+      {
+        return completed.map((task) => (
+          <Task key={task.id} task={task} onDelete={onDelete} />
+        ));
+      }
+    } else if (feed == 2) {
+      return uncompleted.map((task) => (
+        <Task key={task.id} task={task} onDelete={onDelete} />
+      ));
+    }
+  }
+  /*
   const [feed, setFeed] = useState(getAll());
   //update view
   function updateAll() {
@@ -33,38 +52,14 @@ const Tasks = ({ tasks, onDelete }) => {
       <Task key={task.id} task={task} onDelete={onDelete} />
     ));
   }
-
+*/
   return (
     <div className="TaskBox">
       <center>
         <h1 id="taskFeedTitle">TASK FEED</h1>
       </center>
 
-      <div>
-        <center>
-          <button
-            className="feedButtons"
-            onClick={() => setFeed(getAll())}
-            onClick={() => updateAll}
-          >
-            All Tasks
-          </button>
-          <button
-            className="feedButtons"
-            o
-            onClick={() => setFeed(getUncompleted())}
-          >
-            To Do
-          </button>
-          <button
-            className="feedButtons"
-            onClick={() => setFeed(getCompleted())}
-          >
-            Completed
-          </button>
-        </center>
-        {feed}
-      </div>
+      <div>{displayFeed()}</div>
     </div>
   );
 };
