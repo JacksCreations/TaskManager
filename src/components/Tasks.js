@@ -1,9 +1,15 @@
 import React from 'react';
 import Task from './Task';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const Tasks = ({ tasks, onDelete }) => {
   const [feed, setFeed] = useState(getAll());
+  //update view
+  function updateAll() {
+    useEffect(() => {
+      setFeed(getAll);
+    });
+  }
 
   //Shows all tasks
   function getAll() {
@@ -36,7 +42,11 @@ const Tasks = ({ tasks, onDelete }) => {
 
       <div>
         <center>
-          <button className="feedButtons" onClick={() => setFeed(getAll())}>
+          <button
+            className="feedButtons"
+            onClick={() => setFeed(getAll())}
+            onClick={() => updateAll}
+          >
             All Tasks
           </button>
           <button
