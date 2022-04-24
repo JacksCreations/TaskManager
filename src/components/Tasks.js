@@ -50,7 +50,7 @@ const Tasks = ({ tasks, onDelete }) => {
             className="feedButtons"
             onClick={() => setFeed(getCompleted())}
           >
-            Show Completed
+            Completed
           </button>
         </center>
         {feed}
