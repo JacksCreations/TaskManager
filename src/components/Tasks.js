@@ -55,10 +55,6 @@ const Tasks = ({ tasks, onDelete, completed, uncompleted, feed }) => {
 */
   return (
     <div className="TaskBox">
-      <center>
-        <h1 id="taskFeedTitle">TASK FEED</h1>
-      </center>
-
       <div>{displayFeed()}</div>
     </div>
   );

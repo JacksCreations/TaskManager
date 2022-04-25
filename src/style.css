@@ -16,8 +16,9 @@ p {
   font-family: 'Roboto', sans-serif;
   font-weight: 600;
   padding: 8px;
+  margin-top: 10px;
   width: 100%;
-  font-size: 22px;
+  font-size: 25px;
 }
 
 #formLabel {
@@ -83,6 +84,7 @@ p {
 }
 
 .feedButtons {
+  margin-top: 20px;
   margin: 10px;
   font-family: 'Akshar', sans-serif;
   background-color: rgba(0, 237, 158, 0.65);

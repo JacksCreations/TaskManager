@@ -74,18 +74,19 @@ const App = () => {
         <div className="col-md-6">
           <AddTask onAdd={addTask} />
         </div>
-        <center>
-          <button className="feedButtons" onClick={() => getAll()}>
-            All Tasks
-          </button>
-          <button className="feedButtons" o onClick={() => getUncompleted()}>
-            To Do
-          </button>
-          <button className="feedButtons" onClick={() => getCompleted()}>
-            Completed
-          </button>
-        </center>
         <div className="col-md-6">
+          <center>
+            <h1 id="taskFeedTitle">TASK FEED</h1>
+            <button className="feedButtons" onClick={() => getAll()}>
+              All Tasks
+            </button>
+            <button className="feedButtons" o onClick={() => getUncompleted()}>
+              To Do
+            </button>
+            <button className="feedButtons" onClick={() => getCompleted()}>
+              Completed
+            </button>
+          </center>
           <Tasks
             tasks={tasks}
             uncompleted={uncompleted}
