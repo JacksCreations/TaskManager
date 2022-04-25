@@ -11,9 +11,17 @@ const Tasks = ({ tasks, onDelete, completed, uncompleted, feed }) => {
       }
     } else if (feed == 1) {
       {
-        return uncompleted.map((task) => (
-          <Task key={task.id} task={task} onDelete={onDelete} />
-        ));
+        if (uncompleted.length == 0) {
+          return (
+            <center>
+              <h1 id="notasks">Congrats you have no tasks</h1>
+            </center>
+          );
+        } else {
+          return uncompleted.map((task) => (
+            <Task key={task.id} task={task} onDelete={onDelete} />
+          ));
+        }
       }
     } else if (feed == 2) {
       return completed.map((task) => (

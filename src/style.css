@@ -122,3 +122,10 @@ p {
   color: rgba(245, 245, 245);
   border: 2px solid rgba(39, 145, 255, 1);
 }
+
+#notasks {
+  font-size: 40px;
+  font-family: 'bebas';
+  color: blueviolet;
+  margin: 15px;
+}
