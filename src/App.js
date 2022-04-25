@@ -55,17 +55,11 @@ const App = () => {
     setFeed(1); //the error i was running into was because the complete task would call uncompleted and
     //set the feed back to the uncompleted task feed
     let uncompleted = tasks.filter((task) => task.completed === false);
-    /*
-    uncompleted.forEach((task, index) => {
-      if (task.completed === true) {
-        uncompleted.splice(index, 1);
-      }
-    });
-    */
 
     setUncompleted(uncompleted);
   }
 
+  //removes task from to do if checked as completed
   function removeFromTodo() {
     let uncompleted = tasks.filter((task) => task.completed === false);
 
@@ -85,25 +79,61 @@ const App = () => {
     setCompleted(completed);
   }
 
+  //changes the color of the feed buttons when selected
+  function feedButtonIndicator() {
+    if (feed == 0) {
+      return (
+        <div>
+          <button id="selectedFeedButton" onClick={() => getAll()}>
+            All Tasks
+          </button>
+          <button className="feedButtons" onClick={() => getUncompleted()}>
+            To Do
+          </button>
+          <button className="feedButtons" onClick={() => getCompleted()}>
+            Completed
+          </button>
+        </div>
+      );
+    } else if (feed == 1) {
+      return (
+        <div>
+          <button className="feedButtons" onClick={() => getAll()}>
+            All Tasks
+          </button>
+          <button id="selectedFeedButton" onClick={() => getUncompleted()}>
+            To Do
+          </button>
+          <button className="feedButtons" onClick={() => getCompleted()}>
+            Completed
+          </button>
+        </div>
+      );
+    } else if (feed == 2) {
+      return (
+        <div>
+          <button className="feedButtons" onClick={() => getAll()}>
+            All Tasks
+          </button>
+          <button className="feedButtons" onClick={() => getUncompleted()}>
+            To Do
+          </button>
+          <button id="selectedFeedButton" onClick={() => getCompleted()}>
+            Completed
+          </button>
+        </div>
+      );
+    }
+  }
+
   return (
     <div className="container">
       <div className="row">
         <div className="col-md-6">
           <AddTask onAdd={addTask} />
         </div>
-        <div className="col-md-6">
-          <center>
-            <h1 id="taskFeedTitle">TASK FEED</h1>
-            <button className="feedButtons" onClick={() => getAll()}>
-              All Tasks
-            </button>
-            <button className="feedButtons" o onClick={() => getUncompleted()}>
-              To Do
-            </button>
-            <button className="feedButtons" onClick={() => getCompleted()}>
-              Completed
-            </button>
-          </center>
+        <div style={{ marginTop: '35px' }} className="col-md-6">
+          <center>{feedButtonIndicator()}</center>
           <Tasks
             tasks={tasks}
             uncompleted={uncompleted}

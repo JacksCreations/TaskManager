@@ -56,7 +56,7 @@ const AddTask = ({ onAdd }) => {
 
       <div>
         <button type="submit" id="addTask">
-          ADD
+          ADD TASK
         </button>
       </div>
     </form>

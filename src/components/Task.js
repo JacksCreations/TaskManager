@@ -21,7 +21,7 @@ const Task = ({ task, onDelete }) => {
         <h3 className="name">
           {task.name}
           <button className="complete" onClick={() => onDelete(task)}>
-            ✓
+            ✕
           </button>
         </h3>
         <div>{detectNotes()}</div>

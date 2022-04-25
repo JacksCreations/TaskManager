@@ -53,24 +53,23 @@ p {
 
 #addTask {
   margin: 10px;
-  font-family: 'Akshar', sans-serif;
-  background-color: rgba(0, 237, 158, 0.65);
+  font-family: 'Bebas', sans-serif;
+  background-color: rgba(39, 145, 255, 0.65);
   border-radius: 4px;
   font-size: 20px;
-  border-color: black;
   padding-left: 22px;
   padding-right: 22px;
   padding-top: 3px;
   padding-bottom: 3px;
   color: black;
-  border: 2px solid black;
+  border: 2px solid rgba(25, 100, 254, 0.5);
 }
 
 .complete {
   font-size: 15px;
   float: right;
   margin-right: 6px;
-  background-color: rgba(0, 237, 158, 0.65);
+  background-color: rgba(255, 83, 97, 0.7);
   border-radius: 3px;
   border-color: rgb(35, 47, 52, 0.8);
   color: black;
@@ -96,8 +95,8 @@ p {
 .feedButtons {
   margin-top: 20px;
   margin: 10px;
-  font-family: 'Akshar', sans-serif;
-  background-color: rgba(0, 237, 158, 0.65);
+  font-family: 'bebas', sans-serif;
+  background-color: rgba(39, 145, 255, 0.65);
   border-radius: 4px;
   font-size: 20px;
   border-color: black;
@@ -106,5 +105,20 @@ p {
   padding-top: 3px;
   padding-bottom: 3px;
   color: black;
-  border: 2px solid black;
+  border: 2px solid rgba(25, 100, 254, 0.5);
+}
+
+#selectedFeedButton {
+  margin-top: 20px;
+  margin: 10px;
+  font-family: 'Bebas', sans-serif;
+  background-color: rgba(29, 126, 255, 1);
+  border-radius: 4px;
+  font-size: 20px;
+  padding-left: 11px;
+  padding-right: 11px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  color: rgba(245, 245, 245);
+  border: 2px solid rgba(39, 145, 255, 1);
 }
