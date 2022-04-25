@@ -8,20 +8,26 @@ const AddTask = ({ onAdd }) => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    //assigns each task a UUID
-    var id = uuid();
-    id = id.slice(0, 5);
 
-    //set status
-    let completed = false;
-    onAdd({ id, name, description, completed });
+    //validation
+    if (name.length > 0) {
+      //assigns each task a UUID
+      var id = uuid();
+      id = id.slice(0, 5);
 
-    //console.log(id);
-    console.log(name);
-    //console.log(description);
-    console.log(completed);
-    setName('');
-    setDescription('');
+      //set status
+      let completed = false;
+      onAdd({ id, name, description, completed });
+
+      //console.log(id);
+      console.log(name);
+      //console.log(description);
+      console.log(completed);
+      setName('');
+      setDescription('');
+    } else {
+      console.log('enter name of task');
+    }
   };
 
   return (
