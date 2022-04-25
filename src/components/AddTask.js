@@ -32,9 +32,6 @@ const AddTask = ({ onAdd }) => {
 
   return (
     <form onSubmit={onSubmit}>
-      <center>
-        <label id="formLabel">Task Manager</label>
-      </center>
       <div className="mb-2">
         <label form="taskName" className="form-label">
           Task Name

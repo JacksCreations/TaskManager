@@ -3,6 +3,7 @@ import { useState } from 'react';
 import './style.css';
 import AddTask from './components/AddTask';
 import Tasks from './components/Tasks';
+import Header from './components/Header'
 
 const App = () => {
   const [feed, setFeed] = useState(0);
@@ -127,7 +128,8 @@ const App = () => {
   }
 
   return (
-    <div className="container">
+    <div className="containerfluid">
+      <Header />
       <div className="row">
         <div className="col-md-6">
           <AddTask onAdd={addTask} />
