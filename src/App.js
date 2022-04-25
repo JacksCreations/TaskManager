@@ -5,6 +5,8 @@ import AddTask from './components/AddTask';
 import Tasks from './components/Tasks';
 
 const App = () => {
+  const [feed, setFeed] = useState(0);
+
   //test feed
   const [tasks, setTasks] = useState([
     {
@@ -36,19 +38,11 @@ const App = () => {
 
   const completeTask = (task) => {
     task.completed = true;
-    setTasks([...tasks]);
+    setTasks(tasks);
     getUncompleted();
   };
 
-  function updater() {
-    useEffect(() => {
-      console.log();
-    });
-  }
-
-  const [feed, setFeed] = useState(0);
   //Shows all tasks
-
   function getAll() {
     setTasks(tasks);
     setFeed(0);
@@ -64,8 +58,8 @@ const App = () => {
 
   //shows all uncompleted tasks
   function getUncompleted() {
-    let uncompleted = tasks.filter((task) => task.completed == false);
     setFeed(2);
+    let uncompleted = tasks.filter((task) => task.completed === false);
 
     uncompleted.forEach((task, index) => {
       if (task.isCompleted === true) {
