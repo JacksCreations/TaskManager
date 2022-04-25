@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import './style.css';
 import AddTask from './components/AddTask';
 import Tasks from './components/Tasks';
@@ -38,21 +38,21 @@ const App = () => {
 
   const completeTask = (task) => {
     task.completed = true;
-    setTasks(tasks);
+    setTasks([...tasks]);
     getUncompleted();
+    getAll();
   };
 
   //Shows all tasks
   function getAll() {
-    setTasks(tasks);
     setFeed(0);
-    console.log(feed);
+    setTasks([...tasks]);
   }
 
   //shows all completed tasks
   function getCompleted() {
-    let completed = tasks.filter((task) => task.completed == true);
     setFeed(1);
+    let completed = tasks.filter((task) => task.completed == true);
     setCompleted(completed);
   }
 

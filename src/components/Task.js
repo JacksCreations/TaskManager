@@ -17,7 +17,6 @@ const Task = ({ task, onDelete }) => {
         </button>
       </h3>
       <div>{detectNotes()}</div>
-      <p>isCompleted? : {String(task.completed)}</p>
     </div>
   );
 };
