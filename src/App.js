@@ -34,6 +34,7 @@ const App = () => {
   // Add Task
   const addTask = async (task) => {
     setTasks([...tasks, task]);
+    setUncompleted([...uncompleted, task]);
   };
 
   const completeTask = (task) => {
