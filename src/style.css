@@ -12,6 +12,16 @@ p {
   border-radius: 3px;
 }
 
+.taskBoxUncompleted {
+  background-color: rgb(143, 202, 231, 0.1);
+  border: 2px solid black;
+  margin: 6px;
+  padding-left: 9px;
+  padding-top: 10px;
+  border-radius: 3px;
+  color: red;
+}
+
 #taskFeedTitle {
   font-family: 'Roboto', sans-serif;
   font-weight: 600;

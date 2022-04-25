@@ -11,12 +11,12 @@ const Tasks = ({ tasks, onDelete, completed, uncompleted, feed }) => {
       }
     } else if (feed == 1) {
       {
-        return completed.map((task) => (
+        return uncompleted.map((task) => (
           <Task key={task.id} task={task} onDelete={onDelete} />
         ));
       }
     } else if (feed == 2) {
-      return uncompleted.map((task) => (
+      return completed.map((task) => (
         <Task key={task.id} task={task} onDelete={onDelete} />
       ));
     }

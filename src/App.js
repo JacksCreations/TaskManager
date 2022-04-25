@@ -39,8 +39,8 @@ const App = () => {
   const completeTask = (task) => {
     task.completed = true;
     setTasks([...tasks]);
-    getUncompleted();
-    getAll();
+    removeFromTodo();
+    //getAll();
   };
 
   //Shows all tasks
@@ -49,25 +49,39 @@ const App = () => {
     setTasks([...tasks]);
   }
 
-  //shows all completed tasks
-  function getCompleted() {
-    setFeed(1);
-    let completed = tasks.filter((task) => task.completed == true);
-    setCompleted(completed);
-  }
-
   //shows all uncompleted tasks
   function getUncompleted() {
-    setFeed(2);
+    setFeed(1); //the error i was running into was because the complete task would call uncompleted and
+    //set the feed back to the uncompleted task feed
+    let uncompleted = tasks.filter((task) => task.completed === false);
+    /*
+    uncompleted.forEach((task, index) => {
+      if (task.completed === true) {
+        uncompleted.splice(index, 1);
+      }
+    });
+    */
+
+    setUncompleted(uncompleted);
+  }
+
+  function removeFromTodo() {
     let uncompleted = tasks.filter((task) => task.completed === false);
 
     uncompleted.forEach((task, index) => {
-      if (task.isCompleted === true) {
+      if (task.completed === true) {
         uncompleted.splice(index, 1);
       }
     });
 
     setUncompleted(uncompleted);
+  }
+
+  //shows all completed tasks
+  function getCompleted() {
+    setFeed(2);
+    let completed = tasks.filter((task) => task.completed == true);
+    setCompleted(completed);
   }
 
   return (
