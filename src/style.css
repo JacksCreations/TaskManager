@@ -38,7 +38,7 @@ p {
 #formLabel {
   margin-bottom: 12px;
   font-size: 35px;
-  font-family: 'Roboto';
+  font-family: 'RoboBebato';
   margin-top: 10px;
 }
 
@@ -139,10 +139,10 @@ p {
 }
 
 #header {
-  font-family: 'Bebas Neue', sans-serif;
+  font-family: 'Roboto', sans-serif;
   background-color: rgba(29, 126, 255, 1);
   align-content: center;
-  font-size: 30px;
+  font-size: 25px;
   color: rgba(245, 245, 245, 1);
   padding-top: 7px;
   padding-bottom: 3px;
