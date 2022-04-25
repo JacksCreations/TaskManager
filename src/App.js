@@ -34,9 +34,10 @@ const App = () => {
     setTasks([...tasks, task]);
   };
 
-  const deleteTask = (task) => {
+  const completeTask = (task) => {
     task.completed = true;
     setTasks([...tasks]);
+    getUncompleted();
   };
 
   function updater() {
@@ -65,6 +66,13 @@ const App = () => {
   function getUncompleted() {
     let uncompleted = tasks.filter((task) => task.completed == false);
     setFeed(2);
+
+    uncompleted.forEach((task, index) => {
+      if (task.isCompleted === true) {
+        uncompleted.splice(index, 1);
+      }
+    });
+
     setUncompleted(uncompleted);
   }
 
@@ -91,7 +99,7 @@ const App = () => {
             tasks={tasks}
             uncompleted={uncompleted}
             completed={completed}
-            onDelete={deleteTask}
+            onDelete={completeTask}
             feed={feed}
           />
         </div>
